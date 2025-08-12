@@ -1,4 +1,4 @@
 +++
-paginate_by = 5
-sort_by = "date"
+title = "Pages"
+sort_by = "weight"
 +++

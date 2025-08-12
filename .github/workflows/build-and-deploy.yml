@@ -1,0 +1,32 @@
+name: Build and Deploy Zola Site
+
+on:
+  push:
+    branches:
+      - main   # or your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Rust (needed for Zola)
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Install Zola
+        run: cargo install zola
+
+      - name: Build site with Zola
+        run: zola build
+
+      - name: Upload public directory as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: public
+          path: public

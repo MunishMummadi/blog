@@ -1,6 +1,9 @@
 # The URL the site will be built for
 base_url = "https://blog.munish.me"
 
+# Site title
+title = "Munish Mummadi's Blog"
+
 # Theme - Radion: A sleek, modern blog theme
 theme = "radion"
 

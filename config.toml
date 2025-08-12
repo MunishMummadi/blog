@@ -4,8 +4,7 @@ base_url = "https://blog.munish.me"
 # Site title
 title = "Munish Mummadi's Blog"
 
-# Theme - Radion: A sleek, modern blog theme
-theme = "radion"
+# Using local theme files (no external theme dependency)
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true

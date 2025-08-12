@@ -34,8 +34,8 @@ radion_title = "Munish Mummadi"
 radion_menu = [
     {url = "$BASE_URL", name = "Home"},
     {url = "$BASE_URL/pages/about/", name = "About"},
-    {url = "$BASE_URL/categories", name = "Categories"},
-    {url = "$BASE_URL/tags", name = "Tags"},
+    #{url = "$BASE_URL/categories", name = "Categories"},
+    #{url = "$BASE_URL/tags", name = "Tags"},
 ]
 
 # Author information

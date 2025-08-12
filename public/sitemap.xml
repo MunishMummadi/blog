@@ -4,6 +4,9 @@
         <loc>https://blog.munish.me/</loc>
     </url>
     <url>
+        <loc>https://blog.munish.me/categories/</loc>
+    </url>
+    <url>
         <loc>https://blog.munish.me/motivation-behind-blog/</loc>
         <lastmod>2025-08-11</lastmod>
     </url>
@@ -16,5 +19,8 @@
     <url>
         <loc>https://blog.munish.me/pages/about/</loc>
         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+        <loc>https://blog.munish.me/tags/</loc>
     </url>
 </urlset>

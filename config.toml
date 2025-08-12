@@ -38,8 +38,8 @@ radion_menu = [
 # Author information
 author = "Munish Mummadi"
 
-# Theme options
-theme = "toggle"  # Options: light, dark, auto, toggle
+# Theme color mode options (light, dark, auto, toggle)
+theme = "toggle"
 enable_search = true
 codeblock = true
 favicon = true
@@ -49,4 +49,3 @@ comments = false
 # giscus_repo = "your-github-username/your-repo"
 # giscus_repo_id = "FILL_ME_IN"
 # giscus_data_category_id = "FILL_ME_IN"
-

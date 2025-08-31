@@ -13,7 +13,7 @@ description = "Contains information about the HTTP things..."
 
 **The 7 Layers of OSI model**
 This is often referred when sending or receiving data.
-<img src="/assets/Untitled-2025-02-27-1816.png" alt="OSI 7 Layers Explained the Easy Way" width="400" height="50" align="center" style="max-width: 300px; height: 650px;">
+<img src="/assets/levelsofosimodel.png" alt="OSI 7 Layers Explained the Easy Way" width="400" height="50" style="max-width: 300px; height: 600px;">
 
 - Most of these layers fall under network engineering concepts.
 - In http 1.1 persistent connections is introduced.

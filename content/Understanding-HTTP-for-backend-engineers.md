@@ -73,36 +73,36 @@ Connection: keep-alive
 }
 ```
 ## 3. Types of Headers
-1. **Request Headers**
-	1. User-Agent - for identirfying cleint
-	2. Authorization - diff credentials bearer tokens
-	3. Cookie
-	4. Accept - what type of content our client accpets
-2. **General Headers**: somekind of info about the Header
-	1. Date
-	2. Cache-control
-	3. connection: whether to keep it alive or close it
-3. **Representation Headers**
-	1. Content-Type: type i.e json, html etc
-	2. Content-Length: size of resource in bytes
-	3. Content-Encoding: deeplayer
-	4. ETag
-4. **Security Headers**
-	1. Strict-Transport-Security(HSTS): client only communicates over https
-	2. Content-Security-Policy(CSP): Helping prevent cross site scripting attacks
-	3. X-Frame-Options:
-	4. X-Content-Type-Options: preventing mining attacks
-	5. Set-Cookie:
-5. **Custom headers**
+  1. **Request Headers**
+     1. User-Agent - for identirfying client
+     2. Authorization - diff credentials bearer tokens
+     3. Cookie
+     4. Accept - what type of content our client accpets
+  2. **General Headers**: somekind of info about the Header
+     1. Date
+     2. Cache-control
+     3. connection: whether to keep it alive or close it
+  3. **Representation Headers**
+     1. Content-Type: type i.e json, html etc
+     2. Content-Length: size of resource in bytes
+     3. Content-Encoding: deeplayer
+     4. ETag
+  4. **Security Headers**
+     1. Strict-Transport-Security(HSTS): client only communicates over https
+     2. Content-Security-Policy(CSP): Helping prevent cross site scripting attacks
+     3. X-Frame-Options:
+     4. X-Content-Type-Options: preventing mining attacks
+     5. Set-Cookie:
+  5. **Custom headers**
 
 ## 4. HTTP Methods
 - Methods define the **intent** of the interactions
 
-1. **GET** - fetch the data from the server. It shouldn't modify anything on the server.
-2. **POST** - create some data in the server. post req has a body(bcz how else can we send the data to the server.)
-3. **PUT** - Update data but the entire data need to be replaced. *PUT is the complete replacement*
-4. **PATCH** - Patch is like append method i.e we can just add new data but in case of put we need to replace everything. Patch is selective replacement
-<span style="color: yellow;">**Rule of thumb**</span>: Always use Patch method. Unless you have an explicit usecase with PUT
-5. **DELETE** - Remove everything
+  1. **GET** - fetch the data from the server. It shouldn't modify anything on the server.
+  2. **POST** - create some data in the server. post req has a body(bcz how else can we send the data to the server.)
+  3. **PUT** - Update data but the entire data need to be replaced. *PUT is the complete replacement*
+  4. **PATCH** - Patch is like append method i.e we can just add new data but in case of put we need to replace everything. Patch is selective replacement
+  5.  **DELETE** - Remove everything
+- <span style="color: yellow;">**Rule of thumb**</span>: Always use Patch method. Unless you have an explicit usecase with PUT
 
 ## 5. Idempotent vs. Non-idempotent

@@ -18,36 +18,5 @@
     --note-bg-light: #efefef;
 }
 
-/// Minimal heading overrides to make them visually distinct
-/// while preserving theme design
-article[itemprop="articleBody"] {
-    h1 {
-        font-size: 2.2rem !important;
-        font-weight: 700 !important;
-    }
-
-    h2 {
-        font-size: 1.8rem !important;
-        font-weight: 600 !important;
-    }
-
-    h3 {
-        font-size: 1.5rem !important;
-        font-weight: 600 !important;
-    }
-
-    h4 {
-        font-size: 1.3rem !important;
-        font-weight: 500 !important;
-    }
-
-    h5 {
-        font-size: 1.2rem !important;
-        font-weight: 500 !important;
-    }
-
-    h6 {
-        font-size: 1.1rem !important;
-        font-weight: 500 !important;
-    }
-}
+/// Pure Markdown rendering - no theme interference
+/// Headings and content will render naturally as written in Markdown

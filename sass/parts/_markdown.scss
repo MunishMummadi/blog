@@ -1,49 +1,49 @@
-/// Markdown-specific styling for blog content
-/// This file handles the rendering of markdown elements in blog posts
+/// Minimal Markdown styling - preserves pure Markdown rendering
+/// Only essential styling for readability, no theme interference
 
 // Article content container
 article[itemprop="articleBody"] {
-  // Basic typography
+  // Basic typography - minimal and clean
   line-height: 1.6;
   color: inherit;
   
-  // Paragraphs
+  // Paragraphs - minimal spacing
   p {
-    margin-bottom: 1.2rem;
-    text-align: justify;
+    margin-bottom: 1rem;
     
     &:last-child {
       margin-bottom: 0;
     }
   }
   
-  // Headings (already handled in main site.scss, but adding some spacing)
+  // Headings - minimal spacing only
   h1, h2, h3, h4, h5, h6 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
     
     &:first-child {
       margin-top: 0;
     }
   }
   
-  // Lists
+  // Lists - minimal styling
   ul, ol {
-    margin: 1rem 0 1rem 2rem;
+    margin: 0.75rem 0 0.75rem 1.5rem;
     padding-left: 0;
     
     li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
       line-height: 1.5;
       
       // Nested lists
       ul, ol {
-        margin: 0.5rem 0 0.5rem 1.5rem;
+        margin: 0.5rem 0 0 1.5rem;
       }
     }
   }
   
-  // Unordered lists
+  // Unordered lists - standard markers
   ul {
     list-style-type: disc;
     
@@ -56,7 +56,7 @@ article[itemprop="articleBody"] {
     }
   }
   
-  // Ordered lists
+  // Ordered lists - standard numbering
   ol {
     list-style-type: decimal;
     
@@ -69,13 +69,12 @@ article[itemprop="articleBody"] {
     }
   }
   
-  // Blockquotes
+  // Blockquotes - minimal styling
   blockquote {
-    margin: 1.5rem 0;
-    padding: 1rem 1.5rem;
-    border-left: 4px solid var(--accent);
-    background-color: rgba(198, 44, 42, 0.05);
-    border-radius: 0 4px 4px 0;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 3px solid #ccc;
+    background-color: transparent;
     font-style: italic;
     
     p {
@@ -88,105 +87,85 @@ article[itemprop="articleBody"] {
     
     // Nested elements in blockquotes
     ul, ol, h1, h2, h3, h4, h5, h6 {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
     }
   }
   
-  // Emphasis and strong
+  // Emphasis and strong - inherit colors
   em {
     font-style: italic;
     color: inherit;
   }
   
   strong {
-    font-weight: 700;
+    font-weight: 600;
     color: inherit;
   }
   
-  // Inline code
+  // Inline code - minimal styling
   code:not(pre code) {
-    background-color: var(--bg-primary);
-    color: #e6e6e6;
-    padding: 0.2rem 0.4rem;
-    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: inherit;
+    padding: 0.1rem 0.3rem;
+    border-radius: 2px;
     font-size: 0.9em;
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: none;
   }
   
-  // Links
+  // Links - minimal styling
   a {
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom-color 0.2s ease;
+    color: #0066cc;
+    text-decoration: underline;
     
     &:hover {
-      border-bottom-color: var(--accent);
+      text-decoration: none;
     }
     
     &:visited {
-      color: var(--accent);
-      opacity: 0.8;
+      color: #551a8b;
     }
   }
   
-  // Images
+  // Images - minimal styling
   img {
     max-width: 100%;
     height: auto;
-    border-radius: 6px;
-    margin: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
   }
   
-  // Horizontal rules
+  // Horizontal rules - minimal
   hr {
     border: none;
-    border-top: 2px solid var(--accent);
-    margin: 2rem 0;
-    opacity: 0.3;
+    border-top: 1px solid #ccc;
+    margin: 1.5rem 0;
   }
   
-  // Tables (if any markdown tables are used)
+  // Tables - minimal styling
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1.5rem 0;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
     
     th, td {
-      padding: 0.75rem;
+      padding: 0.5rem;
       text-align: left;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid #ccc;
     }
     
     th {
-      background-color: var(--accent);
-      color: white;
       font-weight: 600;
-    }
-    
-    tr:nth-child(even) {
-      background-color: rgba(255, 255, 255, 0.02);
-    }
-    
-    tr:hover {
-      background-color: rgba(255, 255, 255, 0.05);
     }
   }
   
-  // Definition lists (if used)
+  // Definition lists
   dl {
-    margin: 1rem 0;
+    margin: 0.75rem 0;
     
     dt {
       font-weight: 600;
-      margin-top: 1rem;
-      color: var(--accent);
+      margin-top: 0.75rem;
     }
     
     dd {
@@ -195,16 +174,15 @@ article[itemprop="articleBody"] {
     }
   }
   
-  // Footnotes (if used)
+  // Footnotes
   .footnotes {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #ccc;
     font-size: 0.9em;
-    color: rgba(255, 255, 255, 0.7);
   }
   
-  // Task lists (GitHub-style checkboxes)
+  // Task lists
   .task-list-item {
     list-style-type: none;
     
@@ -218,7 +196,6 @@ article[itemprop="articleBody"] {
     background-color: rgba(255, 255, 0, 0.3);
     color: inherit;
     padding: 0.1rem 0.2rem;
-    border-radius: 2px;
   }
   
   // Subscript and superscript
@@ -246,92 +223,40 @@ article[itemprop="articleBody"] {
   // Small text
   small {
     font-size: 0.875em;
-    opacity: 0.8;
   }
   
   // Deleted and inserted text
   del {
     text-decoration: line-through;
-    opacity: 0.6;
   }
   
   ins {
     text-decoration: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: var(--accent);
   }
 }
 
-// Light theme overrides
-.light article[itemprop="articleBody"] {
-  blockquote {
-    background-color: rgba(198, 44, 42, 0.08);
-  }
-  
-  code:not(pre code) {
-    background-color: #f5f5f5;
-    color: #333;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  
-  table {
-    th, td {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    
-    tr:nth-child(even) {
-      background-color: rgba(0, 0, 0, 0.02);
-    }
-    
-    tr:hover {
-      background-color: rgba(0, 0, 0, 0.05);
-    }
-  }
-  
-  .footnotes {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    color: rgba(0, 0, 0, 0.7);
-  }
-  
-  hr {
-    border-top-color: var(--accent);
-    opacity: 0.2;
-  }
-}
-
-// Dark theme overrides
+// Dark theme - minimal overrides
 .dark article[itemprop="articleBody"] {
-  blockquote {
-    background-color: rgba(198, 44, 42, 0.1);
+  code:not(pre code) {
+    background-color: rgba(255, 255, 255, 0.1);
   }
   
-  code:not(pre code) {
-    background-color: #2a2a2a;
-    color: #e6e6e6;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  blockquote {
+    border-left-color: #666;
+  }
+  
+  hr {
+    border-top-color: #666;
   }
   
   table {
     th, td {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    tr:nth-child(even) {
-      background-color: rgba(255, 255, 255, 0.02);
-    }
-    
-    tr:hover {
-      background-color: rgba(255, 255, 255, 0.05);
+      border-bottom-color: #666;
     }
   }
   
   .footnotes {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.7);
-  }
-  
-  hr {
-    border-top-color: var(--accent);
-    opacity: 0.4;
+    border-top-color: #666;
   }
 }
+

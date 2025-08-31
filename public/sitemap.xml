@@ -7,6 +7,10 @@
         <loc>https://blog.munish.me/categories/</loc>
     </url>
     <url>
+        <loc>https://blog.munish.me/learnings-of-building-redis-in-golang/</loc>
+        <lastmod>2025-08-28</lastmod>
+    </url>
+    <url>
         <loc>https://blog.munish.me/motivation-behind-blog/</loc>
         <lastmod>2025-08-11</lastmod>
     </url>
@@ -22,5 +26,9 @@
     </url>
     <url>
         <loc>https://blog.munish.me/tags/</loc>
+    </url>
+    <url>
+        <loc>https://blog.munish.me/understanding-http-for-backend-engineers/</loc>
+        <lastmod>2025-08-30</lastmod>
     </url>
 </urlset>

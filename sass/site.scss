@@ -7,12 +7,47 @@
 @use "parts/search";
 @use "parts/toc";
 @use "parts/latex";
+@use "parts/markdown";
 
 /// Globally defined CSS variables
 :root {
-  --bg-primary: #282828;
-  --accent: #c62c2a;
-  --search-border-color: #ff2e88;
-  --note-bg-dark: #1a1a1a;
-  --note-bg-light: #efefef;
+    --bg-primary: #282828;
+    --accent: #c62c2a;
+    --search-border-color: #ff2e88;
+    --note-bg-dark: #1a1a1a;
+    --note-bg-light: #efefef;
+}
+
+/// Minimal heading overrides to make them visually distinct
+/// while preserving theme design
+article[itemprop="articleBody"] {
+    h1 {
+        font-size: 2.2rem !important;
+        font-weight: 700 !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+        font-weight: 600 !important;
+    }
+
+    h3 {
+        font-size: 1.5rem !important;
+        font-weight: 600 !important;
+    }
+
+    h4 {
+        font-size: 1.3rem !important;
+        font-weight: 500 !important;
+    }
+
+    h5 {
+        font-size: 1.2rem !important;
+        font-weight: 500 !important;
+    }
+
+    h6 {
+        font-size: 1.1rem !important;
+        font-weight: 500 !important;
+    }
 }

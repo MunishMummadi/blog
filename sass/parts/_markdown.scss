@@ -1,0 +1,337 @@
+/// Markdown-specific styling for blog content
+/// This file handles the rendering of markdown elements in blog posts
+
+// Article content container
+article[itemprop="articleBody"] {
+  // Basic typography
+  line-height: 1.6;
+  color: inherit;
+  
+  // Paragraphs
+  p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  // Headings (already handled in main site.scss, but adding some spacing)
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  // Lists
+  ul, ol {
+    margin: 1rem 0 1rem 2rem;
+    padding-left: 0;
+    
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+      
+      // Nested lists
+      ul, ol {
+        margin: 0.5rem 0 0.5rem 1.5rem;
+      }
+    }
+  }
+  
+  // Unordered lists
+  ul {
+    list-style-type: disc;
+    
+    ul {
+      list-style-type: circle;
+      
+      ul {
+        list-style-type: square;
+      }
+    }
+  }
+  
+  // Ordered lists
+  ol {
+    list-style-type: decimal;
+    
+    ol {
+      list-style-type: lower-alpha;
+      
+      ol {
+        list-style-type: lower-roman;
+      }
+    }
+  }
+  
+  // Blockquotes
+  blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--accent);
+    background-color: rgba(198, 44, 42, 0.05);
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+    
+    p {
+      margin: 0;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    // Nested elements in blockquotes
+    ul, ol, h1, h2, h3, h4, h5, h6 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  // Emphasis and strong
+  em {
+    font-style: italic;
+    color: inherit;
+  }
+  
+  strong {
+    font-weight: 700;
+    color: inherit;
+  }
+  
+  // Inline code
+  code:not(pre code) {
+    background-color: var(--bg-primary);
+    color: #e6e6e6;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  // Links
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.2s ease;
+    
+    &:hover {
+      border-bottom-color: var(--accent);
+    }
+    
+    &:visited {
+      color: var(--accent);
+      opacity: 0.8;
+    }
+  }
+  
+  // Images
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  // Horizontal rules
+  hr {
+    border: none;
+    border-top: 2px solid var(--accent);
+    margin: 2rem 0;
+    opacity: 0.3;
+  }
+  
+  // Tables (if any markdown tables are used)
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    th {
+      background-color: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+    
+    tr:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+  
+  // Definition lists (if used)
+  dl {
+    margin: 1rem 0;
+    
+    dt {
+      font-weight: 600;
+      margin-top: 1rem;
+      color: var(--accent);
+    }
+    
+    dd {
+      margin-left: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  // Footnotes (if used)
+  .footnotes {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  // Task lists (GitHub-style checkboxes)
+  .task-list-item {
+    list-style-type: none;
+    
+    input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+  }
+  
+  // Highlighted text
+  mark {
+    background-color: rgba(255, 255, 0, 0.3);
+    color: inherit;
+    padding: 0.1rem 0.2rem;
+    border-radius: 2px;
+  }
+  
+  // Subscript and superscript
+  sub, sup {
+    font-size: 0.75em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  
+  sup {
+    top: -0.5em;
+  }
+  
+  sub {
+    bottom: -0.25em;
+  }
+  
+  // Abbreviations
+  abbr {
+    border-bottom: 1px dotted currentColor;
+    cursor: help;
+  }
+  
+  // Small text
+  small {
+    font-size: 0.875em;
+    opacity: 0.8;
+  }
+  
+  // Deleted and inserted text
+  del {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+  
+  ins {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--accent);
+  }
+}
+
+// Light theme overrides
+.light article[itemprop="articleBody"] {
+  blockquote {
+    background-color: rgba(198, 44, 42, 0.08);
+  }
+  
+  code:not(pre code) {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+    th, td {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    tr:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    tr:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+  
+  .footnotes {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
+  hr {
+    border-top-color: var(--accent);
+    opacity: 0.2;
+  }
+}
+
+// Dark theme overrides
+.dark article[itemprop="articleBody"] {
+  blockquote {
+    background-color: rgba(198, 44, 42, 0.1);
+  }
+  
+  code:not(pre code) {
+    background-color: #2a2a2a;
+    color: #e6e6e6;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  table {
+    th, td {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+    
+    tr:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+  
+  .footnotes {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  hr {
+    border-top-color: var(--accent);
+    opacity: 0.4;
+  }
+}

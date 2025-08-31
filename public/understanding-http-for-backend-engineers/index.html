@@ -296,7 +296,7 @@ Client and server are connected and information is <code>client</code></li>
 <ol>
 <li><strong>Request Headers</strong>
 <ol>
-<li>User-Agent - for identirfying cleint</li>
+<li>User-Agent - for identirfying client</li>
 <li>Authorization - diff credentials bearer tokens</li>
 <li>Cookie</li>
 <li>Accept - what type of content our client accpets</li>
@@ -330,16 +330,20 @@ Client and server are connected and information is <code>client</code></li>
 </ol>
 <h2 id="4-http-methods">4. HTTP Methods</h2>
 <ul>
-<li>Methods define the <strong>intent</strong> of the interactions</li>
-</ul>
+<li>
+<p>Methods define the <strong>intent</strong> of the interactions</p>
 <ol>
 <li><strong>GET</strong> - fetch the data from the server. It shouldn't modify anything on the server.</li>
 <li><strong>POST</strong> - create some data in the server. post req has a body(bcz how else can we send the data to the server.)</li>
 <li><strong>PUT</strong> - Update data but the entire data need to be replaced. <em>PUT is the complete replacement</em></li>
-<li><strong>PATCH</strong> - Patch is like append method i.e we can just add new data but in case of put we need to replace everything. Patch is selective replacement
-<span style="color: yellow;"><strong>Rule of thumb</strong></span>: Always use Patch method. Unless you have an explicit usecase with PUT</li>
+<li><strong>PATCH</strong> - Patch is like append method i.e we can just add new data but in case of put we need to replace everything. Patch is selective replacement</li>
 <li><strong>DELETE</strong> - Remove everything</li>
 </ol>
+</li>
+<li>
+<p><span style="color: yellow;"><strong>Rule of thumb</strong></span>: Always use Patch method. Unless you have an explicit usecase with PUT</p>
+</li>
+</ul>
 <h2 id="5-idempotent-vs-non-idempotent">5. Idempotent vs. Non-idempotent</h2>
 
         

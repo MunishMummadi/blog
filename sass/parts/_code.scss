@@ -45,13 +45,11 @@ $language-colors: (
     $r * 0.299 + $g * 0.587 + $b * 0.114
   );
 
-@if ($brightness > 128) {
-  @return #000000; // Use black for bright backgrounds
-}
-
-@else {
-  @return #ffffff; // Use white for dark backgrounds
-}
+  @if ($brightness > 128) {
+    @return #000000; // Use black for bright backgrounds
+  } @else {
+    @return #ffffff; // Use white for dark backgrounds
+  }
 }
 
 /// Mixin for language label styles
@@ -90,8 +88,14 @@ $language-colors: (
   right: 5px;
   z-index: 10;
   background-color: transparent;
-  border: "#3D444D";
+  border: 1px solid #3D444D;
   border-radius: 3px;
+  padding: 2px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 
   svg {
     fill: #9198A1;
@@ -104,8 +108,13 @@ $language-colors: (
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.5);
   background-color: #f3f3f3;
+  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 }
 
+// Enhanced code block styling
 pre {
   background-color: var(--bg-primary) !important;
   border-radius: 5px;
@@ -116,6 +125,7 @@ pre {
   position: relative;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
 
   code {
     background-color: transparent !important;
@@ -129,8 +139,13 @@ pre {
   }
 }
 
+.light pre {
+  background-color: #f6f8fa !important;
+  border: 1px solid #e1e4e8;
+}
+
 .light code table td {
-  color: #ffffff !important;
+  color: #24292e !important;
 }
 
 pre code table mark {
@@ -153,6 +168,14 @@ pre::-webkit-scrollbar-track {
   background-color: #1E222A;
 }
 
+.light pre::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+}
+
+.light pre::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
 a {
   code:hover {
     background-color: transparent;
@@ -169,6 +192,61 @@ pre,
 kbd,
 samp {
   font-size: 1.05em;
-  /* slightly larger than the surrounding text */
   line-height: 1.6;
+}
+
+// Inline code styling
+:not(pre) > code {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #e83e8c;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.dark :not(pre) > code {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ff6b9d;
+}
+
+// Code block with line numbers
+.highlight {
+  margin: 1.5rem 0;
+  
+  .linenos {
+    padding-right: 1rem;
+    border-right: 1px solid #444;
+    margin-right: 1rem;
+    
+    .linenodiv {
+      pre {
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        color: #666;
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+// Copy success indicator
+.copy-success {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #28a745;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  z-index: 20;
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
 }

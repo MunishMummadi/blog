@@ -9,14 +9,24 @@
 @use "parts/latex";
 @use "parts/markdown";
 
-/// Globally defined CSS variables
+/// Globally defined CSS variables for enhanced theming
 :root {
     --bg-primary: #282828;
     --accent: #c62c2a;
     --search-border-color: #ff2e88;
     --note-bg-dark: #1a1a1a;
     --note-bg-light: #efefef;
+    --text-color: #333;
+    --search-bg-color: #fff;
+    --bg-light: #f9f9f9;
 }
 
-/// Pure Markdown rendering - no theme interference
-/// Headings and content will render naturally as written in Markdown
+/// Dark theme variables
+.dark {
+    --text-color: #ecf0f1;
+    --search-bg-color: #2c3e50;
+    --bg-light: #34495e;
+}
+
+/// Enhanced markdown rendering with improved typography and visual hierarchy
+/// All markdown elements now have better spacing, colors, and interactive states

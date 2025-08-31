@@ -1,40 +1,71 @@
-/// Minimal Markdown styling - preserves pure Markdown rendering
-/// Only essential styling for readability, no theme interference
+/// Enhanced Markdown styling with improved typography and visual hierarchy
+/// Maintains clean aesthetic while providing better readability
 
 // Article content container
 article[itemprop="articleBody"] {
-  // Basic typography - minimal and clean
-  line-height: 1.6;
+  // Basic typography - improved readability
+  line-height: 1.7;
   color: inherit;
+  font-size: 1.1rem;
   
-  // Paragraphs - minimal spacing
+  // Paragraphs - better spacing
   p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    text-align: justify;
     
     &:last-child {
       margin-bottom: 0;
     }
   }
   
-  // Headings - minimal spacing only
+  // Headings - improved hierarchy and spacing
   h1, h2, h3, h4, h5, h6 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: inherit;
     
     &:first-child {
       margin-top: 0;
     }
   }
   
-  // Lists - minimal styling
+  h1 {
+    font-size: 2.2rem;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.5rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.3rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    color: var(--accent);
+  }
+  
+  h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  
+  h5, h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  // Lists - improved styling and spacing
   ul, ol {
-    margin: 0.75rem 0 0.75rem 1.5rem;
+    margin: 1rem 0 1rem 2rem;
     padding-left: 0;
     
     li {
-      margin-bottom: 0.25rem;
-      line-height: 1.5;
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
       
       // Nested lists
       ul, ol {
@@ -43,7 +74,7 @@ article[itemprop="articleBody"] {
     }
   }
   
-  // Unordered lists - standard markers
+  // Unordered lists - enhanced markers
   ul {
     list-style-type: disc;
     
@@ -56,7 +87,7 @@ article[itemprop="articleBody"] {
     }
   }
   
-  // Ordered lists - standard numbering
+  // Ordered lists - enhanced numbering
   ol {
     list-style-type: decimal;
     
@@ -69,13 +100,18 @@ article[itemprop="articleBody"] {
     }
   }
   
-  // Blockquotes - minimal styling
+  // Blockquotes - enhanced styling
   blockquote {
-    margin: 1rem 0;
-    padding: 0.5rem 1rem;
-    border-left: 3px solid #ccc;
-    background-color: transparent;
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--accent);
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 0 4px 4px 0;
     font-style: italic;
+    
+    .dark & {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
     
     p {
       margin: 0;
@@ -87,118 +123,194 @@ article[itemprop="articleBody"] {
     
     // Nested elements in blockquotes
     ul, ol, h1, h2, h3, h4, h5, h6 {
-      margin-top: 0.75rem;
-      margin-bottom: 0.75rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9em;
+      color: inherit;
+      opacity: 0.7;
+      
+      &::before {
+        content: "\2014\0020";
+      }
     }
   }
   
-  // Emphasis and strong - inherit colors
+  // Emphasis and strong - enhanced styling
   em {
     font-style: italic;
     color: inherit;
+    font-weight: 500;
   }
   
   strong {
-    font-weight: 600;
+    font-weight: 700;
     color: inherit;
   }
   
-  // Inline code - minimal styling
+  // Inline code - enhanced styling
   code:not(pre code) {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: inherit;
-    padding: 0.1rem 0.3rem;
-    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #e83e8c;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
     font-size: 0.9em;
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
     border: none;
+    font-weight: 500;
   }
   
-  // Links - minimal styling
+  .dark & code:not(pre code) {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ff6b9d;
+  }
+  
+  // Links - enhanced styling
   a {
-    color: #0066cc;
-    text-decoration: underline;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
     
     &:hover {
+      border-bottom-color: var(--accent);
       text-decoration: none;
     }
     
     &:visited {
-      color: #551a8b;
+      color: var(--accent);
+      opacity: 0.8;
     }
   }
   
-  // Images - minimal styling
+  // Images - enhanced styling
   img {
     max-width: 100%;
     height: auto;
-    margin: 0.5rem 0;
+    margin: 1rem 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    .dark & {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
   }
   
-  // Horizontal rules - minimal
+  // Horizontal rules - enhanced
   hr {
     border: none;
-    border-top: 1px solid #ccc;
-    margin: 1.5rem 0;
+    border-top: 2px solid var(--accent);
+    margin: 2rem 0;
+    opacity: 0.3;
   }
   
-  // Tables - minimal styling
+  // Tables - enhanced styling
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    .dark & {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
     
     th, td {
-      padding: 0.5rem;
+      padding: 0.75rem;
       text-align: left;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #ddd;
+      
+      .dark & {
+        border-bottom-color: #444;
+      }
     }
     
     th {
-      font-weight: 600;
+      font-weight: 700;
+      background-color: rgba(0, 0, 0, 0.05);
+      color: inherit;
+      
+      .dark & {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+    
+    tr:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+      
+      .dark & {
+        background-color: rgba(255, 255, 255, 0.02);
+      }
     }
   }
   
-  // Definition lists
+  // Definition lists - enhanced
   dl {
-    margin: 0.75rem 0;
+    margin: 1rem 0;
     
     dt {
-      font-weight: 600;
-      margin-top: 0.75rem;
+      font-weight: 700;
+      margin-top: 1rem;
+      color: var(--accent);
     }
     
     dd {
+      margin-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      padding-left: 1rem;
+      border-left: 2px solid #ddd;
+      
+      .dark & {
+        border-left-color: #444;
+      }
+    }
+  }
+  
+  // Footnotes - enhanced
+  .footnotes {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid #ddd;
+    font-size: 0.9em;
+    
+    .dark & {
+      border-top-color: #444;
+    }
+    
+    ol {
       margin-left: 1rem;
+    }
+    
+    li {
       margin-bottom: 0.5rem;
     }
   }
   
-  // Footnotes
-  .footnotes {
-    margin-top: 1.5rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid #ccc;
-    font-size: 0.9em;
-  }
-  
-  // Task lists
+  // Task lists - enhanced
   .task-list-item {
     list-style-type: none;
     
     input[type="checkbox"] {
       margin-right: 0.5rem;
+      transform: scale(1.2);
     }
   }
   
-  // Highlighted text
+  // Highlighted text - enhanced
   mark {
-    background-color: rgba(255, 255, 0, 0.3);
+    background-color: rgba(255, 255, 0, 0.4);
     color: inherit;
-    padding: 0.1rem 0.2rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 2px;
   }
   
-  // Subscript and superscript
+  // Subscript and superscript - enhanced
   sub, sup {
     font-size: 0.75em;
     line-height: 0;
@@ -214,49 +326,74 @@ article[itemprop="articleBody"] {
     bottom: -0.25em;
   }
   
-  // Abbreviations
+  // Abbreviations - enhanced
   abbr {
-    border-bottom: 1px dotted currentColor;
+    border-bottom: 2px dotted currentColor;
     cursor: help;
+    text-decoration: none;
   }
   
-  // Small text
+  // Small text - enhanced
   small {
     font-size: 0.875em;
+    opacity: 0.8;
   }
   
-  // Deleted and inserted text
+  // Deleted and inserted text - enhanced
   del {
     text-decoration: line-through;
+    opacity: 0.6;
   }
   
   ins {
     text-decoration: underline;
+    background-color: rgba(0, 255, 0, 0.1);
+    padding: 0.1rem 0.2rem;
+    border-radius: 2px;
+  }
+  
+  // Code blocks - ensure proper spacing
+  pre {
+    margin: 1.5rem 0;
+  }
+  
+  // Inline elements spacing
+  * + * {
+    margin-top: 0.5rem;
+  }
+  
+  // First child no top margin
+  > *:first-child {
+    margin-top: 0;
   }
 }
 
-// Dark theme - minimal overrides
+// Dark theme - enhanced overrides
 .dark article[itemprop="articleBody"] {
   code:not(pre code) {
     background-color: rgba(255, 255, 255, 0.1);
   }
   
   blockquote {
-    border-left-color: #666;
+    border-left-color: var(--accent);
   }
   
   hr {
-    border-top-color: #666;
+    border-top-color: var(--accent);
   }
   
   table {
     th, td {
-      border-bottom-color: #666;
+      border-bottom-color: #444;
     }
   }
   
   .footnotes {
-    border-top-color: #666;
+    border-top-color: #444;
+  }
+  
+  dl dd {
+    border-left-color: #444;
   }
 }
 

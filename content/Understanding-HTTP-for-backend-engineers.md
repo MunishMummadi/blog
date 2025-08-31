@@ -12,7 +12,7 @@ description = "Contains information about the HTTP things..."
 *Note*: `TCP` and `UDP` are the most used transfer protocols on the internet. Among them `TCP` is the most reliable one.
 
 **The 7 Layers of OSI model**
-This is often referred when sending or receiving data.
+- This is often referred when sending or receiving data.
 <img src="/assets/levelsofosimodel.png" alt="OSI 7 Layers Explained the Easy Way" width="400" height="50" style="max-width: 300px; height: 600px;">
 
 - Most of these layers fall under network engineering concepts.

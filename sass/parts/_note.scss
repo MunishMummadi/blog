@@ -1,13 +1,21 @@
+/* Enhanced Note/Shortcode Styling
+ * Provides better visual hierarchy and typography for note blocks
+ * Supports various note types with distinct styling
+ */
+
 .note-container {
   overflow: hidden;
-  margin: 1em auto;
+  margin: 2rem auto;
   padding: 0;
   font-size: 1.1em;
   min-width: 100%;
-  font-family:
-    'JetBrains Mono', Menlo, Monaco, Lucida Console, Liberation Mono,
-    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
-    monospace, serif;
+  font-family: inherit;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+  .dark & {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .note-details {
@@ -17,28 +25,37 @@
   border-right: none !important;
   border-bottom: none !important;
   padding: 0;
+  background-color: var(--note-bg-dark);
+  
+  .light & {
+    background-color: var(--note-bg-light);
+  }
 }
 
-.light .note-header {
-  background-color: color-mix(in srgb, var(--note-bg-light) 75%, black 25%);
-}
-
+// Note header styling
 .note-header {
   background-color: color-mix(in srgb, var(--note-bg-dark) 90%, white 20%);
   cursor: pointer;
   position: relative;
   font-size: 1.2em;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   padding: 0;
   margin: 0;
   color: inherit;
   list-style: none;
   display: flex;
   align-items: center;
+  border-radius: 8px 0 0 0;
+  
+  .light & {
+    background-color: color-mix(in srgb, var(--note-bg-light) 75%, black 25%);
+  }
 
   p {
-    margin: 10px;
-    font-weight: bold;
+    margin: 15px 20px;
+    font-weight: 700;
+    color: inherit;
+    flex: 1;
   }
 
   &::-webkit-details-marker {
@@ -51,43 +68,236 @@
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    color: #c62c2a;
+    color: var(--accent);
     transition: transform 0.3s ease;
+    font-size: 0.9em;
+    font-weight: bold;
   }
 
   details[open]>&::after {
     transform: translateY(-50%) rotate(180deg);
   }
+  
+  &:hover {
+    background-color: color-mix(in srgb, var(--note-bg-dark) 85%, white 25%);
+    
+    .light & {
+      background-color: color-mix(in srgb, var(--note-bg-light) 70%, black 30%);
+    }
+  }
 }
 
-.note-center {
-  text-align: center;
-  padding: 0;
-  width: 100%;
-}
-
+// Note content styling
 .note-content {
-  padding: 10px 25px !important;
+  padding: 20px 25px !important;
   background-color: inherit;
   font-size: 1em;
   background-color: color-mix(in srgb, var(--note-bg-dark) 90%, white 10%);
   color: inherit;
-  line-height: 1.6em;
+  line-height: 1.7em;
+  border-radius: 0 0 8px 0;
 
   a {
-    color: #ff2e88;
-    font-weight: normal;
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
 
     &:hover {
-      color: #fff;
+      color: var(--accent);
+      border-bottom-color: var(--accent);
     }
   }
 
   .dark strong {
     color: #fff;
   }
+  
+  .light strong {
+    color: #000;
+  }
+  
+  // Enhanced typography within notes
+  p {
+    margin-bottom: 1rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  ul, ol {
+    margin: 1rem 0 1rem 1.5rem;
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  code {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--accent);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+    
+    .light & {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  pre {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+    
+    .light & {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
 }
 
 .light .note-content {
   background-color: color-mix(in srgb, var(--note-bg-light) 90%, black 5%);
+}
+
+// Note center alignment
+.note-center {
+  text-align: center;
+  padding: 0;
+  width: 100%;
+}
+
+// Note types with distinct styling
+.note-info {
+  .note-header {
+    border-left-color: #3498db;
+    
+    &::after {
+      color: #3498db;
+    }
+  }
+  
+  .note-details {
+    border-left-color: #3498db;
+  }
+}
+
+.note-warning {
+  .note-header {
+    border-left-color: #f39c12;
+    
+    &::after {
+      color: #f39c12;
+    }
+  }
+  
+  .note-details {
+    border-left-color: #f39c12;
+  }
+}
+
+.note-error {
+  .note-header {
+    border-left-color: #e74c3c;
+    
+    &::after {
+      color: #e74c3c;
+    }
+  }
+  
+  .note-details {
+    border-left-color: #e74c3c;
+  }
+}
+
+.note-success {
+  .note-header {
+    border-left-color: #27ae60;
+    
+    &::after {
+      color: #27ae60;
+    }
+  }
+  
+  .note-details {
+    border-left-color: #27ae60;
+  }
+}
+
+.note-tip {
+  .note-header {
+    border-left-color: #9b59b6;
+    
+    &::after {
+      color: #9b59b6;
+    }
+  }
+  
+  .note-details {
+    border-left-color: #9b59b6;
+  }
+}
+
+// Responsive note design
+@media (max-width: 768px) {
+  .note-container {
+    margin: 1.5rem auto;
+    
+    .note-header {
+      font-size: 1.1em;
+      
+      p {
+        margin: 12px 15px;
+      }
+    }
+    
+    .note-content {
+      padding: 15px 20px !important;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .note-container {
+    margin: 1rem auto;
+    
+    .note-header {
+      font-size: 1em;
+      
+      p {
+        margin: 10px 12px;
+      }
+      
+      &::after {
+        right: 15px;
+      }
+    }
+    
+    .note-content {
+      padding: 12px 15px !important;
+      font-size: 0.95em;
+    }
+  }
+}
+
+// Print styles for notes
+@media print {
+  .note-container {
+    box-shadow: none;
+    border: 1px solid #000;
+    
+    .note-header {
+      background-color: #f0f0f0;
+      color: #000;
+    }
+    
+    .note-content {
+      background-color: #fff;
+      color: #000;
+    }
+  }
 }
